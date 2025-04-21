@@ -1,0 +1,1 @@
+export const DIR_NAME = import.meta.dirname + "/..";

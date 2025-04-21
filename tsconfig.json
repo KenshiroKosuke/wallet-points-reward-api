@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "module": "Node16",
+    "lib": ["ES2023"],
+    "target": "ES2022",
+    "moduleResolution": "node16",
+    "esModuleInterop": true,
+    "declaration": true,
+    "strict": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "outDir": "dist",
+    "baseUrl": "src",
+    "paths": {
+      "src/*": ["./*"],
+      "#/*": ["./*"],
+    },
+    "incremental": true,
+    "skipLibCheck": true,
+    "noEmitOnError": true,
+    "strictNullChecks": true,
+    "noImplicitAny": false,
+    "forceConsistentCasingInFileNames": false,
+    "noFallthroughCasesInSwitch": false,
+  },
+  "include": ["src/**/*.ts", "test/**/*.ts", "test/setup.ts"],
+  "exclude": ["node_modules"]
+}
