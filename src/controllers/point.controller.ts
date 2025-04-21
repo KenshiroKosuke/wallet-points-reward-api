@@ -59,6 +59,16 @@ export const pointController: FastifyPluginCallback = async (fastify, opts) => {
           return reply.status(403).send({ success: false, msg: "Unauthorized" });
         }
         const { description, name, price, currency } = request.body;
+        // cehck currency
+        const isValidCurrency = await db.currency.findOne({
+          organizationId: request.user.organizationId,
+          uuid: currency
+        })
+        if(!isValidCurrency){
+          return reply.status(400).send({
+            msg: "Invalid Currency"
+          })
+        }
         const newReward = db.reward.create({
           description,
           name,
